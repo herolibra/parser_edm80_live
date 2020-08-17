@@ -1,0 +1,38 @@
+import json
+import sync
+furl = 'http://193.196.38.108:8080/FROST-Server/v1.0/'
+op_pm10 = {
+    "name": "PM 10",
+    "description": "Particulate matter with an approximate diameter of less than 10 micrometers",
+    "definition" : "https://www.eea.europa.eu/themes/air/air-quality/resources/glossary/pm10",
+    "@iot.id": "saqn:op:mcpm10",
+}
+op_pm25 = {
+    "name": "PM 2.5",
+    "description": "Particulate matter with an approximate diameter of less than 2.5 micrometers",
+    "definition" : "https://www.eea.europa.eu/themes/air/air-quality/resources/glossary/pm10",
+    "@iot.id": "saqn:op:mcpm2p5",
+}
+op_pm1 = {
+    "name": "PM 1",
+    "description": "Particulate matter with an approximate diameter of less than 1 micrometers",
+    "definition" : "https://www.eea.europa.eu/themes/air/air-quality/resources/glossary/pm10",
+    "@iot.id": "saqn:op:mcpm1",
+}
+op_pm4 = {
+    "name": "PM 4",
+    "description": "Particulate matter with an approximate diameter of less than 4 micrometers",
+    "definition" : "https://www.eea.europa.eu/themes/air/air-quality/resources/glossary/pm10",
+    "@iot.id": "saqn:op:mcpm4",
+}
+op_bins = {
+    "name": "Number concentration PM10 Datastream",
+    "description": "Particulate matter with an approximate diameter of less than 10 micrometers",
+    "definition" : "https://www.eea.europa.eu/themes/air/air-quality/resources/glossary/pm10",
+    "@iot.id": "saqn:op:ncpm10",
+}
+sync.rest_request(furl + "ObservedProperties", json.dumps(op_pm10))
+sync.rest_request(furl + "ObservedProperties", json.dumps(op_pm4))
+sync.rest_request(furl + "ObservedProperties", json.dumps(op_pm25))
+sync.rest_request(furl + "ObservedProperties", json.dumps(op_pm1))
+sync.rest_request(furl + "ObservedProperties", json.dumps(op_bins))
