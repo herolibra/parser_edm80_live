@@ -9,7 +9,7 @@ import calendar
 # print(sys.path)
 ftp = FTP('wp12373544.server-he.de')
 ftp.login('ftp12373544-data', '!JaTzVAKMslTkGT6')
-ftp.cwd('live')
+ftp.cwd('Messnetz')
 filelist=ftp.nlst()
 
 
